@@ -5,12 +5,46 @@
   <title>Oyun Rehberi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { margin:0; font-family:Arial; background:#0f172a; color:#e5e7eb; }
-    header { background:#020617; padding:20px; text-align:center; }
-    section { padding:20px; }
-    h2 { color:#38bdf8; }
-    .card { background:#020617; padding:15px; border-radius:10px; margin-bottom:15px; }
-    footer { background:#020617; text-align:center; padding:15px; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    header {
+      background: #020617;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #020617;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #38bdf8;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    h2 {
+      color: #38bdf8;
+    }
+    .card {
+      background: #020617;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -20,29 +54,103 @@
   <p>Oyunlar • Bilgiler • Sistem Gereksinimleri</p>
 </header>
 
-<section>
-  <h2>1. Bölüm – Oyunlar</h2>
+<nav>
+  <a href="#oyunlar">Oyunlar</a>
+  <a href="#bilgiler">Bilgiler</a>
+  <a href="#sistem">Sistem</a>
+</nav>
+
+<!-- 1. BÖLÜM -->
+<section id="oyunlar">
+  <h2>🕹️ Oyunlar</h2>
+
   <div class="card">
-    <h3>GTA V</h3>
-    <p>İndirme: 185M+ | Aktif Oyuncu: 1.2M+</p>
+    <h3>Minecraft</h3>
+    <p>İndirme: 300.000.000+<br>Aktif Oyuncu: 1.000.000+</p>
+  </div>
+
+  <div class="card">
+    <h3>FiveM</h3>
+    <p>İndirme: 50.000.000+<br>Aktif Oyuncu: 250.000+</p>
+  </div>
+
+  <div class="card">
+    <h3>The Isle</h3>
+    <p>İndirme: 5.000.000+<br>Aktif Oyuncu: 20.000+</p>
+  </div>
+
+  <div class="card">
+    <h3>Valorant</h3>
+    <p>İndirme: 100.000.000+<br>Aktif Oyuncu: 700.000+</p>
   </div>
 </section>
 
-<section>
-  <h2>2. Bölüm – Oyun Bilgileri</h2>
+<!-- 2. BÖLÜM -->
+<section id="bilgiler">
+  <h2>📘 Oyunlar Nasıl Oynanır?</h2>
+
   <div class="card">
-    <p>GTA V açık dünya bir oyundur. Görevler yaparak ilerlersin.</p>
+    <h3>Minecraft</h3>
+    <p>Minecraft açık dünya bir oyundur. Amaç hayatta kalmak, ev yapmak ve keşfetmektir.</p>
+  </div>
+
+  <div class="card">
+    <h3>FiveM</h3>
+    <p>FiveM, GTA V için roleplay modudur. Gerçek hayata yakın roller oynanır.</p>
+  </div>
+
+  <div class="card">
+    <h3>The Isle</h3>
+    <p>The Isle oyununda bir dinozor olarak hayatta kalmaya çalışırsın.</p>
+  </div>
+
+  <div class="card">
+    <h3>Valorant</h3>
+    <p>Valorant 5v5 rekabetçi FPS oyunudur. Ajanlar ve yetenekler vardır.</p>
   </div>
 </section>
 
-<section>
-  <h2>3. Bölüm – Minimum Sistem</h2>
+<!-- 3. BÖLÜM -->
+<section id="sistem">
+  <h2>💻 Minimum Sistem Gereksinimleri</h2>
+
   <div class="card">
+    <h3>Minecraft</h3>
     <ul>
-      <li>İşlemci: i5</li>
+      <li>İşlemci: Intel i3</li>
+      <li>RAM: 4 GB</li>
+      <li>Ekran Kartı: Intel HD</li>
+      <li>Depolama: 2 GB</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>FiveM</h3>
+    <ul>
+      <li>İşlemci: Intel i5</li>
       <li>RAM: 8 GB</li>
-      <li>Ekran Kartı: GTX 660</li>
-      <li>Windows 10</li>
+      <li>Ekran Kartı: GTX 970</li>
+      <li>Depolama: 120 GB</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>The Isle</h3>
+    <ul>
+      <li>İşlemci: Intel i5</li>
+      <li>RAM: 8 GB</li>
+      <li>Ekran Kartı: GTX 960</li>
+      <li>Depolama: 25 GB</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Valorant</h3>
+    <ul>
+      <li>İşlemci: Intel i3 4150</li>
+      <li>RAM: 4 GB</li>
+      <li>Ekran Kartı: Intel HD 4000</li>
+      <li>Depolama: 20 GB</li>
     </ul>
   </div>
 </section>
@@ -53,38 +161,36 @@
 
 </body>
 </html>
-<nav style="background:#020617;padding:10px;text-align:center;">
-  <a href="#oyunlar" style="color:#38bdf8;margin:10px;">Oyunlar</a>
-  <a href="#bilgiler" style="color:#38bdf8;margin:10px;">Bilgiler</a>
-  <a href="#sistem" style="color:#38bdf8;margin:10px;">Sistem</a>
-</nav>
-<section id="sistem">
-<section id="bilgiler">
-<section id="oyunlar">
-<div class="card">
-  <h3>🔴 Valorant</h3>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("keyup", function () {
+    let filter = searchInput.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      let text = card.innerText.toLowerCase();
+      card.style.display = text.includes(filter) ? "" : "none";
+    });
+  });
+                  </script>
+                  <div style="padding:15px;text-align:center;">
+  <input type="text" id="searchInput" placeholder="Oyun ara..."
+    style="padding:10px;width:80%;max-width:300px;border-radius:8px;border:none;">
+                  </div>
+                  <div class="card" onclick="alert('Minecraft: Hayatta kal, inşa et, keşfet!')"
+     style="cursor:pointer;">
+  <h3>Minecraft</h3>
+  <p>İndirme: 300.000.000+<br>Aktif Oyuncu: 1.000.000+</p>
+                  </div>
+                  <div class="card">
+  <h3>OYUN ADI</h3>
   <p>
-    Tür: FPS / Rekabetçi<br>
-    İndirme: 100.000.000+<br>
-    Aktif Oyuncu: 700.000+
+    Tür: <br>
+    İndirme: <br>
+    Aktif Oyuncu:
   </p>
-</div>
-<div class="card">
-  <h3>Valorant Nasıl Oynanır?</h3>
-  <p>
-    Valorant 5’e 5 oynanan taktiksel FPS oyunudur.
-    Oyuncular ajan seçer, yetenek kullanır ve
-    round kazanarak maçı almaya çalışır.
-    Amaç takım halinde stratejik oynamaktır.
-  </p>
-</div>
-<div class="card">
-  <h3>Valorant – Minimum Sistem</h3>
-  <ul>
-    <li>İşlemci: Intel i3 4150</li>
-    <li>RAM: 4 GB</li>
-    <li>Ekran Kartı: Intel HD 4000</li>
-    <li>Depolama: 20 GB</li>
-    <li>OS: Windows 10</li>
-  </ul>
-</div>
+                  </div>
+   <div class="card">
+  <img src="https://i.imgur.com/6XKQK0B.jpg" style="width:100%;border-radius:10px;">
+  <h3>Minecraft</h3>
+  <p>İndirme: 300.000.000+<br>Aktif Oyuncu: 1.000.000+</p>
+   </div>               
