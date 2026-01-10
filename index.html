@@ -245,3 +245,38 @@ function rastgeleOyun(){
   window.location.href = sec;
 }
 </script>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Oyun Rehberi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{background:#0f172a;color:#e5e7eb;font-family:Arial;margin:0}
+header{background:#020617;padding:20px;text-align:center}
+.card{background:#020617;padding:15px;border-radius:10px;margin:15px}
+a{color:#38bdf8;text-decoration:none}
+button{padding:12px 20px;border:none;border-radius:10px;background:#38bdf8;color:#020617}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🎮 Oyun Rehberi</h1>
+<button onclick="rastgele()">🎲 Rastgele Oyun</button>
+</header>
+
+<div class="card"><a href="minecraft.html">Minecraft</a></div>
+<div class="card"><a href="valorant.html">Valorant</a></div>
+<div class="card"><a href="fivem.html">FiveM</a></div>
+<div class="card"><a href="theisle.html">The Isle</a></div>
+
+<script>
+function rastgele(){
+const oyunlar=["minecraft.html","valorant.html","fivem.html","theisle.html"];
+window.location.href=oyunlar[Math.floor(Math.random()*oyunlar.length)];
+}
+</script>
+
+</body>
+</html>
