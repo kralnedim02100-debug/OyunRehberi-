@@ -14,3 +14,93 @@
      Resmi Site
   </a>
 </div>
+<div class="oyun-kart">
+  <h3>GTA V</h3>
+
+  <iframe width="100%" height="215"
+    src="https://www.youtube.com/embed/QkkoHAzjnUs"
+    title="GTA V Trailer"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  <p>Açık dünya, hikâye ve aksiyon dolu bir oyun.</p>
+</div>
+<style>
+body{
+  background:#020617;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+.oyun-kart{
+  background:#0f172a;
+  padding:15px;
+  border-radius:15px;
+  margin-bottom:20px;
+  box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.oyun-kart h3{
+  color:#38bdf8;
+}
+</style>
+<h2>🖥️ PC Toplama</h2>
+
+<select id="cpu">
+  <option value="3000">Intel i5 - 3000₺</option>
+  <option value="5000">Intel i7 - 5000₺</option>
+</select>
+
+<select id="gpu">
+  <option value="8000">RTX 3060 - 8000₺</option>
+  <option value="12000">RTX 4070 - 12000₺</option>
+</select>
+
+<select id="ram">
+  <option value="1500">16GB RAM - 1500₺</option>
+  <option value="3000">32GB RAM - 3000₺</option>
+</select>
+
+<button onclick="hesapla()">Toplam Hesapla</button>
+
+<p id="sonuc"></p>
+<script>
+function hesapla(){
+  const cpu = Number(document.getElementById("cpu").value);
+  const gpu = Number(document.getElementById("gpu").value);
+  const ram = Number(document.getElementById("ram").value);
+
+  const toplam = cpu + gpu + ram;
+
+  document.getElementById("sonuc").innerText =
+    "Toplam Fiyat: " + toplam + " ₺";
+}
+</script>
+<h2>💬 Yorumlar</h2>
+
+<textarea id="yorum" placeholder="Yorum yaz..."></textarea>
+<br>
+<button onclick="yorumEkle()">Gönder</button>
+
+<div id="yorumlar"></div>
+<script>
+function yorumEkle(){
+  const y = document.getElementById("yorum").value;
+  if(y==="") return;
+
+  const div = document.createElement("p");
+  div.innerText = "👤 Kullanıcı: " + y;
+
+  document.getElementById("yorumlar").appendChild(div);
+  document.getElementById("yorum").value="";
+}
+</script>
+<h2>🎨 Tema Ayarla</h2>
+
+<input type="color" onchange="temaDegis(this.value)">
+<script>
+function temaDegis(renk){
+  document.body.style.background = renk;
+}
+</script>
