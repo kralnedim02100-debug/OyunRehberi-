@@ -1,254 +1,204 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Oyun Rehberi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Oyun Rehberi | FPS & Hikaye Oyunları</title>
 
-    <!-- Google doğrulama -->
-    <meta name="google-site-verification" content="CcEiVaRQ-3kEgwfWFQTSMeSfP5Q3ThTSnCFjOx59fVw" />
+  <!-- SEO -->
+  <meta name="description" content="FPS ve hikaye oyunları, sistem gereksinimleri, oyun rehberi">
+  <meta name="keywords" content="oyun rehberi, fps oyunları, hikaye oyunları, sistem gereksinimleri">
+  <meta name="author" content="Oyun Rehberi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-        }
-        header {
-            background: #020617;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            color: #38bdf8;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 30px;
-            text-align: center;
-        }
-        .box {
-            background: #020617;
-            margin: 15px auto;
-            padding: 20px;
-            max-width: 600px;
-            border-radius: 10px;
-        }
-        footer {
-            background: #020617;
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-            color: #94a3b8;
-        }
-    </style>
-</head>
+  <!-- Google doğrulama (istersen silme) -->
+  <meta name="google-site-verification" content="CcEiVaRQ-3kEgwfWFQTSMeSfP5Q3ThTSnCFjOx59fVw" />
 
-<body>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
 
-<header>
-    <h1>🎮 Oyun Rehberi</h1>
-    <nav>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="games.html">Oyunlar</a>
-        <a href="#">Sistem Gereksinimleri</a>
-    </nav>
-</header>
+    header {
+      background: #020617;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-<section>
-    <div class="box">
-        <h2>Hoş Geldin 👋</h2>
-        <p>
-            Oyun Rehberi, FPS ve hikaye odaklı oyunların
-            <b>sistem gereksinimlerini</b>, <b>oynanış bilgilerini</b>
-            ve <b>rehberlerini</b> sunar.
-        </p>
-    </div>
+    header h1 {
+      margin: 0;
+      color: #22c55e;
+    }
 
-    <div class="box">
-        <h2>🔥 Popüler Türler</h2>
-        <p>FPS • Hikaye • Açık Dünya • Korku • RPG</p>
-    </div>
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
 
-    <div class="box">
-        <h2>🚀 Yakında</h2>
-        <p>
-            ✔ Oyun arama motoru<br>
-            ✔ Sistem kontrol aracı<br>
-            ✔ Reklam & gelir sistemi
-        </p>
-    </div>
-</section>
+    nav a:hover {
+      color: #22c55e;
+    }
 
-<footer>
-    © 2026 Oyun Rehberi | GitHub Pages
-</footer>
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #020617, #0f172a);
+    }
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <title>Oyun Rehberi | Ana Sayfa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
 
-        body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
-            min-height: 100vh;
-        }
+    .hero p {
+      color: #cbd5f5;
+      font-size: 18px;
+    }
 
-        header {
-            padding: 25px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .search-box {
+      margin-top: 30px;
+    }
 
-        header h1 {
-            font-size: 26px;
-            color: #00ffcc;
-        }
+    .search-box input {
+      width: 90%;
+      max-width: 400px;
+      padding: 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        nav a:hover {
-            color: #00ffcc;
-        }
+    .section h3 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
 
-        .hero {
-            text-align: center;
-            padding: 90px 20px;
-        }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+    .card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
 
-        .hero p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.6;
-        }
+    .card:hover {
+      transform: scale(1.05);
+    }
 
-        .hero button {
-            margin-top: 35px;
-            padding: 15px 40px;
-            font-size: 18px;
-            border: none;
-            border-radius: 30px;
-            background: #00ffcc;
-            color: #000;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    .card h4 {
+      margin-top: 0;
+      color: #22c55e;
+    }
 
-        .hero button:hover {
-            background: #00ccaa;
-            transform: scale(1.05);
-        }
+    .card p {
+      color: #cbd5f5;
+      font-size: 14px;
+    }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 60px 40px;
-        }
-
-        .feature {
-            background: rgba(255,255,255,0.08);
-            padding: 25px;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .feature:hover {
-            transform: translateY(-8px);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .feature h3 {
-            margin-bottom: 10px;
-            color: #00ffcc;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            opacity: 0.7;
-            font-size: 14px;
-        }
-    </style>
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>🎮 Oyun Rehberi</h1>
-    <nav>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="games.html">Oyunlar</a>
-    </nav>
+  <h1>🎮 Oyun Rehberi</h1>
+  <nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="oyun.html">Oyunlar</a>
+    <a href="#">Sistem Gereksinimi</a>
+    <a href="#">İletişim</a>
+  </nav>
 </header>
 
 <section class="hero">
-    <h2>Bilgisayarın Hangi Oyunu Açar?</h2>
-    <p>
-        Oyun Rehberi sayesinde istediğin oyunun sistem gereksinimlerini öğren,
-        FPS ve hikaye oyunlarını keşfet, bilgisayarına uygun oyunları kolayca bul.
-    </p>
-    <button onclick="window.location.href='games.html'">
-        🎯 Oyunları Keşfet
-    </button>
+  <h2>FPS & Hikaye Oyunları</h2>
+  <p>En iyi oyunları keşfet, sisteminin kaldırıp kaldırmadığını öğren</p>
+
+  <div class="search-box">
+    <input type="text" placeholder="Oyun ara (örnek: GTA, CS, COD)">
+  </div>
 </section>
 
-<section class="features">
-    <div class="feature">
-        <h3>🔍 Akıllı Arama</h3>
-        <p>Binlerce oyun arasında hızlıca arama yap, istediğin oyunu saniyeler içinde bul.</p>
+<section class="section">
+  <h3>🎯 Oyun Kategorileri</h3>
+
+  <div class="cards">
+    <div class="card">
+      <h4>FPS Oyunları</h4>
+      <p>Call of Duty, Battlefield, CS, Valorant, Doom</p>
     </div>
 
-    <div class="feature">
-        <h3>💻 Sistem Gereksinimleri</h3>
-        <p>Minimum ve önerilen sistem gereksinimleriyle bilgisayarın oyunu açar mı öğren.</p>
+    <div class="card">
+      <h4>Hikaye Oyunları</h4>
+      <p>The Last of Us, RDR2, Witcher, Detroit</p>
     </div>
 
-    <div class="feature">
-        <h3>🎮 FPS & Hikaye</h3>
-        <p>FPS, hikaye, korku, RPG ve daha fazlası tek bir platformda.</p>
+    <div class="card">
+      <h4>Açık Dünya</h4>
+      <p>GTA, Cyberpunk, Assassin’s Creed</p>
     </div>
+
+    <div class="card">
+      <h4>Korku</h4>
+      <p>Resident Evil, Silent Hill, Dead Space</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>🔥 Popüler Oyunlar</h3>
+
+  <div class="cards">
+    <div class="card">
+      <h4>GTA V</h4>
+      <p>Açık dünya, hikaye, online</p>
+    </div>
+
+    <div class="card">
+      <h4>Call of Duty</h4>
+      <p>FPS, multiplayer, rekabetçi</p>
+    </div>
+
+    <div class="card">
+      <h4>Minecraft</h4>
+      <p>Sandbox, hayatta kalma</p>
+    </div>
+
+    <div class="card">
+      <h4>Red Dead Redemption 2</h4>
+      <p>Western, sinematik hikaye</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-    © 2026 Oyun Rehberi | GitHub Pages
+  <p>© 2026 Oyun Rehberi | GitHub Pages</p>
 </footer>
 
 </body>
-</html>
+        </html>
