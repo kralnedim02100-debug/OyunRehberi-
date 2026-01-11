@@ -986,3 +986,177 @@ function filterGames() {
 
 </body>
   </html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Oyunlar | Oyun Rehberi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  background: #020617;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #22c55e;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+nav a:hover {
+  color: #22c55e;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.search input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.game {
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.game h3 {
+  color: #22c55e;
+  margin-top: 0;
+}
+
+.game p {
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.game button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #22c55e;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.game button:hover {
+  background: #16a34a;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎮 Oyunlar</h1>
+  <nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="oyun.html">Oyunlar</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="search">
+    <input type="text" id="search" placeholder="Oyun ara..." onkeyup="ara()">
+  </div>
+
+  <div class="games" id="gameList">
+
+    <!-- GTA -->
+    <div class="game">
+      <h3>GTA V</h3>
+      <p>Açık dünya, hikaye, online</p>
+      <p><b>Minimum:</b> i5 / 8GB RAM / GTX 660</p>
+      <button>Detaylar</button>
+    </div>
+
+    <!-- Minecraft -->
+    <div class="game">
+      <h3>Minecraft</h3>
+      <p>Sandbox, hayatta kalma</p>
+      <p><b>Minimum:</b> 4GB RAM / Dahili GPU</p>
+      <button>Detaylar</button>
+    </div>
+
+    <!-- Call of Duty -->
+    <div class="game">
+      <h3>Call of Duty</h3>
+      <p>FPS, Multiplayer</p>
+      <p><b>Minimum:</b> i5 / 8GB RAM / GTX 970</p>
+      <button>Detaylar</button>
+    </div>
+
+    <!-- Valorant -->
+    <div class="game">
+      <h3>Valorant</h3>
+      <p>FPS, Rekabetçi</p>
+      <p><b>Minimum:</b> 4GB RAM / Intel HD</p>
+      <button>Detaylar</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Oyun Rehberi
+</footer>
+
+<script>
+function ara() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let games = document.getElementsByClassName("game");
+
+  for (let i = 0; i < games.length; i++) {
+    let title = games[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+    if (title.includes(input)) {
+      games[i].style.display = "";
+    } else {
+      games[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
