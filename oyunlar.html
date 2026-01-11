@@ -1160,3 +1160,176 @@ function ara() {
 
 </body>
 </html>
+<p style="font-size:12px;opacity:0.7;">
+Bu alan profesyonel destek yerine geçmez.
+</p>
+<hr style="margin:50px 0;">
+
+<section id="eglence-ai">
+  <h2>🎉 Eğlence Alanı – Yapay Zekâ ile Sohbet</h2>
+  <p>Oyunlar, sistem gereksinimleri veya eğlencelik sorular sor 👇</p>
+
+  <div class="chat-box">
+    <div id="chat"></div>
+
+    <input type="text" id="soru" placeholder="Bir şey sor..." />
+    <button onclick="cevapla()">Sor</button>
+  </div>
+</section>
+<style>
+#eglence-ai{
+  background:#0f172a;
+  padding:20px;
+  border-radius:12px;
+  color:white;
+}
+
+.chat-box{
+  margin-top:15px;
+}
+
+#chat{
+  background:#020617;
+  padding:15px;
+  height:200px;
+  overflow-y:auto;
+  border-radius:8px;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+#soru{
+  width:70%;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+}
+
+button{
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  background:#22c55e;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+<script>
+function cevapla(){
+  const soru = document.getElementById("soru").value.toLowerCase();
+  const chat = document.getElementById("chat");
+
+  let cevap = "Bunu tam anlayamadım ama oyunlarla ilgili sorabilirsin 😄";
+
+  if(soru.includes("fps")){
+    cevap = "FPS oyunları hızlı refleks ve nişan alma üzerine kurulu oyunlardır.";
+  }
+  else if(soru.includes("minecraft")){
+    cevap = "Minecraft yaratıcılık ve hayatta kalma odaklı bir sandbox oyunudur.";
+  }
+  else if(soru.includes("sistem")){
+    cevap = "Sistem gereksinimleri oyunun minimum ve önerilen donanım ihtiyacını gösterir.";
+  }
+  else if(soru.includes("en iyi oyun")){
+    cevap = "Herkese göre değişir ama Witcher 3, RDR2 ve GTA V çok popülerdir.";
+  }
+  else if(soru.includes("selam")){
+    cevap = "Selam 👋 Oyun Rehberi yapay zekâsına hoş geldin!";
+  }
+
+  chat.innerHTML += "<p><b>Sen:</b> " + soru + "</p>";
+  chat.innerHTML += "<p><b>AI:</b> " + cevap + "</p>";
+  chat.scrollTop = chat.scrollHeight;
+
+  document.getElementById("soru").value = "";
+}
+</script>
+<script>
+async function sor(){
+  const input = document.getElementById("input");
+  const chat = document.getElementById("chat");
+  const soru = input.value;
+
+  chat.innerHTML += `<p><b>Sen:</b> ${soru}</p>`;
+  input.value = "";
+
+  const response = await fetch("https://api.openai.com/v1/chat/completions",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      "Authorization":"Bearer SENIN_API_KEYIN"
+    },
+    body:JSON.stringify({
+      model:"gpt-3.5-turbo",
+      messages:[{role:"user",content:soru}]
+    })
+  });
+
+  const data = await response.json();
+  const cevap = data.choices[0].message.content;
+
+  chat.innerHTML += `<p><b>AI:</b> ${cevap}</p>`;
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+<hr style="margin:50px 0;">
+
+<section id="dert-dinle">
+  <h2>💙 Derdini Anlat</h2>
+  <p>Burada yargılanmazsın. İstersen içini dök.</p>
+
+  <div id="dert-chat" style="
+    background:#020617;
+    color:white;
+    padding:15px;
+    height:260px;
+    overflow-y:auto;
+    border-radius:10px;
+    margin-bottom:10px;
+    font-size:14px;
+  "></div>
+
+  <input id="dert-input" placeholder="İçinden geçenleri yaz..." style="
+    width:70%;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+  ">
+  <button onclick="dertDinle()">Gönder</button>
+</section>
+<script>
+function dertDinle(){
+  const input = document.getElementById("dert-input");
+  const chat = document.getElementById("dert-chat");
+  const mesaj = input.value.toLowerCase();
+
+  if(mesaj.trim() === "") return;
+
+  let cevap = "Seni dinliyorum. Anlatmak istemen bile önemli bir adım.";
+
+  if(mesaj.includes("yalnız")){
+    cevap = "Yalnız hissetmek çok zor olabilir. Ama şu an yalnız değilsin, buradayım.";
+  }
+  else if(mesaj.includes("kötü") || mesaj.includes("mutsuz")){
+    cevap = "Bunu yaşaman zor olmalı. Hissettiğin şeyler geçerli ve önemli.";
+  }
+  else if(mesaj.includes("bıktım") || mesaj.includes("yoruldum")){
+    cevap = "Çok yorulmuş gibisin. Bazen durup nefes almak bile yeterli olabilir.";
+  }
+  else if(mesaj.includes("kimse")){
+    cevap = "Anlaşılmadığını hissetmek insanı çok incitir. Burada seni anlamaya çalışıyorum.";
+  }
+  else if(mesaj.includes("kork")){
+    cevap = "Korkmak insanidir. Güvende olmak istemen çok normal.";
+  }
+  else{
+    cevap = "Paylaştıkların değerli. İstersen biraz daha anlatabilirsin.";
+  }
+
+  chat.innerHTML += `<p><b>Sen:</b> ${input.value}</p>`;
+  chat.innerHTML += `<p><b>Dinleyen:</b> ${cevap}</p>`;
+  chat.scrollTop = chat.scrollHeight;
+
+  input.value = "";
+}
+</script>
