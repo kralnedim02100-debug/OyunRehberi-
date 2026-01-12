@@ -42,14 +42,29 @@
     }
   </style>
 </head>
-
 <body>
 
+<p id="welcome"></p>
+<button onclick="logout()">Çıkış</button>
+
+<script>
+if(localStorage.getItem("login")==="true"){
+  welcome.innerText="Hoş geldin, " + localStorage.getItem("user");
+}else{
+  window.location.href="uyelik.html";
+}
+
+function logout(){
+  localStorage.removeItem("login");
+  location.reload();
+}
+</script>
   <!-- BUTONLAR -->
   <nav class="menu">
     <a href="index.html" class="btn">Ana Sayfa</a>
     <a href="oyunlar.html" class="btn">Oyunlar</a>
     <a href="indirme.html" class="btn">Kodlar</a>
+    <a href="uyelik.html" class="btn">Üyelik</a>
     <a href="eglence.html" class="btn">Eğlence</a>
   </nav>
 
