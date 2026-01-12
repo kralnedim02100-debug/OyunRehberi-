@@ -1,0 +1,93 @@
+import openai
+
+def yapay_zeka_cevap(kullanici_mesaji):
+    response = openai.ChatCompletion.create(
+      model="gpt-4",
+      messages=[
+        # İŞTE BURASI: Yapay zekanın "kişiliğini" belirlediğimiz yer
+        {"role": "system", "content": "Sen dünyanın en yardımsever ve bilgili asistanısın. Adım adım düşünerek cevap verirsin."},
+        
+        {"role": "user", "content": kullanici_mesaji}
+      ]
+    )
+    return response.choices[0].message.content
+
+# Kullanım
+print(yapay_zeka_cevap("Kuantum fiziğini 5 yaşındaki birine anlatır mısın?"))
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yapay Zeka - Oyun Rehberi</title>
+<style>
+body { margin:0; font-family: Arial, sans-serif; background:#0f172a; color:white; }
+.menu { display:flex; justify-content:center; gap:15px; background:#111827; padding:15px; flex-wrap:wrap; }
+.btn { padding:12px 20px; background:#2563eb; color:white; text-decoration:none; border-radius:8px; font-weight:bold; transition:0.3s; }
+.btn:hover { background:#1e40af; }
+h1 { text-align:center; margin-top:30px; color:#22c55e; }
+.chat-container { max-width:600px; margin:30px auto; background:#1e293b; padding:20px; border-radius:10px; }
+.messages { max-height:400px; overflow-y:auto; padding:10px; border:1px solid #334155; border-radius:8px; margin-bottom:10px; }
+.message { margin:10px 0; padding:8px; border-radius:6px; }
+.user { background:#2563eb; text-align:right; }
+.bot { background:#16a34a; text-align:left; }
+input[type=text] { width:80%; padding:10px; border-radius:6px; border:none; margin-right:5px; }
+button { padding:10px 15px; border:none; border-radius:6px; background:#2563eb; color:white; cursor:pointer; }
+button:hover { background:#1e40af; }
+</style>
+</head>
+<body>
+
+<nav class="menu">
+  <a href="index.html" class="btn">Ana Sayfa</a>
+  <a href="oyunlar.html" class="btn">Oyunlar</a>
+  <a href="indirme.html" class="btn">Kodlar</a>
+  <a href="eglence.html" class="btn">Eğlence</a>
+  <a href="pc-yarisma.html" class="btn">PC Yarışması</a>
+</nav>
+
+<h1>🤖 Yapay Zeka Sohbet</h1>
+<p style="text-align:center;">Sorularınızı buraya yazın, Yapay Zeka cevaplasın!</p>
+
+<div class="chat-container">
+  <div class="messages" id="messages"></div>
+  <input type="text" id="userInput" placeholder="Sorunuzu yazın..." />
+  <button onclick="sendMessage()">Gönder</button>
+</div>
+
+<script>
+function sendMessage() {
+    const input = document.getElementById("userInput");
+    const msg = input.value.trim();
+    if(msg === "") return;
+    
+    const messages = document.getElementById("messages");
+    
+    // Kullanıcı mesajı
+    const userMsg = document.createElement("div");
+    userMsg.classList.add("message", "user");
+    userMsg.innerText = msg;
+    messages.appendChild(userMsg);
+    
+    // Basit AI cevabı (simülasyon)
+    const botMsg = document.createElement("div");
+    botMsg.classList.add("message", "bot");
+    
+    // Örnek cevaplar
+    let reply = "Hmm, bunu düşündüm ama tam emin değilim 😅";
+    if(msg.toLowerCase().includes("merhaba")) reply = "Merhaba! 🎮 Oyun rehberine hoş geldiniz!";
+    else if(msg.toLowerCase().includes("minecraft")) reply = "Minecraft harika bir oyun! Bloklarla kendi dünyanı yaratabilirsin 🏰";
+    else if(msg.toLowerCase().includes("valorant")) reply = "Valorant FPS sevenler için mükemmel! Rekabetçi maçlara hazır ol 🏹";
+    else if(msg.toLowerCase().includes("teşekkür")) reply = "Rica ederim! 😊 Başka bir sorunuz varsa yazabilirsiniz.";
+    
+    botMsg.innerText = reply;
+    messages.appendChild(botMsg);
+    
+    input.value = "";
+    messages.scrollTop = messages.scrollHeight;
+}
+</script>
+
+</body>
+</html>
