@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Üyelik</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+body{
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.box{
+  background:#020617;
+  padding:25px;
+  border-radius:12px;
+  width:300px;
+}
+
+input,button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:none;
+}
+
+button{
+  background:#2563eb;
+  color:white;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Üyelik</h2>
+
+  <input id="user" placeholder="Kullanıcı Adı">
+  <input id="pass" type="password" placeholder="Şifre">
+
+  <button onclick="register()">Kayıt Ol</button>
+  <button onclick="login()">Giriş Yap</button>
+
+  <p id="msg"></p>
+</div>
+
+<script>
+function register(){
+  localStorage.setItem("user", user.value);
+  localStorage.setItem("pass", pass.value);
+  msg.innerText="✅ Kayıt başarılı";
+}
+
+function login(){
+  if(
+    user.value === localStorage.getItem("user") &&
+    pass.value === localStorage.getItem("pass")
+  ){
+    localStorage.setItem("login","true");
+    window.location.href="index.html";
+  }else{
+    msg.innerText="❌ Hatalı giriş";
+  }
+}
+</script>
+
+</body>
+</html>
+<p id="welcome"></p>
+<button onclick="logout()">Çıkış</button>
+
+<script>
+if(localStorage.getItem("login")==="true"){
+  welcome.innerText="Hoş geldin, " + localStorage.getItem("user");
+}else{
+  window.location.href="uyelik.html";
+}
+
+function logout(){
+  localStorage.removeItem("login");
+  location.reload();
+}
+</script>
