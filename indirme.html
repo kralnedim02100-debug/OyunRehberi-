@@ -339,3 +339,142 @@ async function gonder(){
   chat.scrollTop = chat.scrollHeight;
 }
 </script>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>PC Yarışması</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
+  margin:0;
+  padding:20px;
+}
+
+h1{text-align:center;color:#22c55e}
+
+.form{
+  background:#020617;
+  padding:20px;
+  border-radius:12px;
+  max-width:500px;
+  margin:auto;
+}
+
+input, select, textarea, button{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+}
+
+button{
+  background:#2563eb;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.pc-list{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#020617;
+  padding:15px;
+  border-radius:12px;
+}
+
+.card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.flag{
+  font-size:24px;
+}
+
+.rating button{
+  margin:3px;
+  padding:5px 10px;
+  background:#1e40af;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🖥️ PC Yarışması</h1>
+
+<div class="form">
+  <input id="name" placeholder="PC'yi yapan kişi">
+  <select id="country">
+    <option value="🇹🇷">Türkiye 🇹🇷</option>
+    <option value="🇩🇪">Almanya 🇩🇪</option>
+    <option value="🇺🇸">ABD 🇺🇸</option>
+    <option value="🇫🇷">Fransa 🇫🇷</option>
+    <option value="🇯🇵">Japonya 🇯🇵</option>
+  </select>
+
+  <textarea id="spec" placeholder="Sistem özellikleri (CPU, GPU, RAM...)"></textarea>
+
+  <input id="img" placeholder="PC fotoğraf linki (https://...)">
+
+  <button onclick="addPC()">PC'yi Yarışmaya Ekle</button>
+</div>
+
+<div class="pc-list" id="list"></div>
+
+<script>
+let pcs = [];
+
+function addPC(){
+  const pc = {
+    name: name.value,
+    country: country.value,
+    spec: spec.value,
+    img: img.value,
+    votes: []
+  };
+  pcs.push(pc);
+  render();
+}
+
+function vote(i, score){
+  pcs[i].votes.push(score);
+  render();
+}
+
+function avg(v){
+  if(v.length===0) return "0";
+  return (v.reduce((a,b)=>a+b)/v.length).toFixed(1);
+}
+
+function render(){
+  list.innerHTML="";
+  pcs.forEach((pc,i)=>{
+    list.innerHTML+=`
+      <div class="card">
+        <img src="${pc.img}">
+        <h3>${pc.name} <span class="flag">${pc.country}</span></h3>
+        <p>${pc.spec}</p>
+        <p>⭐ Ortalama Puan: ${avg(pc.votes)}</p>
+        <div class="rating">
+          ${[1,2,3,4,5,6,7,8,9,10].map(n=>`<button onclick="vote(${i},${n})">${n}</button>`).join("")}
+        </div>
+      </div>
+    `;
+  });
+}
+</script>
+
+</body>
+</html>
