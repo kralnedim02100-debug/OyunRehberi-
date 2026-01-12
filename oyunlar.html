@@ -1333,3 +1333,191 @@ function dertDinle(){
   input.value = "";
 }
 </script>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oyunlar - Oyun Rehberi</title>
+<style>
+body { margin:0; font-family: Arial, sans-serif; background:#0f172a; color:white; }
+.menu { display:flex; justify-content:center; gap:15px; background:#111827; padding:15px; flex-wrap:wrap; }
+.btn { padding:12px 20px; background:#2563eb; color:white; text-decoration:none; border-radius:8px; font-weight:bold; transition:0.3s; }
+.btn:hover { background:#1e40af; }
+h1 { text-align:center; margin-top:50px; color:#22c55e; }
+p { text-align:center; font-size:18px; max-width:800px; margin:10px auto; line-height:1.6; }
+.container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
+.card { background:#1e293b; padding:15px; border-radius:10px; width:300px; text-align:center; transition:0.3s; }
+.card:hover { background:#334155; transform: translateY(-5px); }
+.card img { width:100%; border-radius:8px; }
+.card h3 { margin:10px 0; color:#22c55e; }
+.card video { width:100%; border-radius:8px; margin-top:10px; }
+.card button { margin-top:10px; padding:10px 15px; background:#16a34a; color:white; border:none; border-radius:6px; cursor:pointer; transition:0.3s; }
+.card button:hover { background:#15803d; }
+.system { text-align:left; background:#111827; padding:10px; border-radius:8px; margin-top:10px; font-size:14px; }
+</style>
+</head>
+<body>
+
+<nav class="menu">
+    <a href="index.html" class="btn">Ana Sayfa</a>
+    <a href="oyunlar.html" class="btn">Oyunlar</a>
+    <a href="indirme.html" class="btn">Kodlar</a>
+    <a href="eglence.html" class="btn">Eğlence</a>
+    <a href="pc-yarisma.html" class="btn">PC Yarışması</a>
+</nav>
+
+<h1>🎮 Oyun Rehberi - Oyunlar</h1>
+<p>Oyunları keşfedin, sistem gereksinimlerini görün ve indirme linklerine ulaşın!</p>
+
+<div class="container">
+
+<!-- Minecraft -->
+<div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Minecraft_cover.png" alt="Minecraft">
+    <h3>Minecraft</h3>
+    <p>Açık Dünya / Macera / Sandbox</p>
+    <video controls>
+        <source src="https://www.youtube.com/watch?v=MmB9b5njVbA" type="video/mp4">
+    </video>
+    <div class="system">
+        <strong>Minimum:</strong> CPU: 2.0 GHz, RAM: 2GB, GPU: Intel HD Graphics<br>
+        <strong>Önerilen:</strong> CPU: 2.6 GHz, RAM: 4GB, GPU: NVIDIA GeForce GTX 660
+    </div>
+    <button onclick="window.location.href='https://example.com/minecraft.apk'">APK İndir</button>
+</div>
+
+<!-- Valorant -->
+<div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Valorant_cover_art.jpg" alt="Valorant">
+    <h3>Valorant</h3>
+    <p>FPS / Rekabetçi / Online</p>
+    <video controls>
+        <source src="https://www.youtube.com/watch?v=ws-J6yHOnx8" type="video/mp4">
+    </video>
+    <div class="system">
+        <strong>Minimum:</strong> CPU: Intel Core 2 Duo E8400, RAM: 4GB, GPU: Intel HD 3000<br>
+        <strong>Önerilen:</strong> CPU: Intel i3-4150, RAM: 4GB, GPU: GeForce GT 730
+    </div>
+    <button onclick="window.location.href='https://example.com/valorant.apk'">APK İndir</button>
+</div>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oyunlar - Oyun Rehberi</title>
+<style>
+body { margin:0; font-family: Arial, sans-serif; background:#0f172a; color:white; }
+.menu { display:flex; justify-content:center; gap:15px; background:#111827; padding:15px; flex-wrap:wrap; }
+.btn { padding:12px 20px; background:#2563eb; color:white; text-decoration:none; border-radius:8px; font-weight:bold; transition:0.3s; }
+.btn:hover { background:#1e40af; }
+h1 { text-align:center; margin-top:50px; color:#22c55e; }
+p { text-align:center; font-size:18px; max-width:800px; margin:10px auto; line-height:1.6; }
+.container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
+.card { background:#1e293b; padding:15px; border-radius:10px; width:300px; text-align:center; transition:0.3s; }
+.card:hover { background:#334155; transform: translateY(-5px); }
+.card img { width:100%; border-radius:8px; }
+.card video { width:100%; border-radius:8px; margin-top:10px; }
+.card h3 { margin:10px 0; color:#22c55e; }
+.card button { margin-top:10px; padding:10px 15px; background:#16a34a; color:white; border:none; border-radius:6px; cursor:pointer; transition:0.3s; }
+.card button:hover { background:#15803d; }
+.system { text-align:left; background:#111827; padding:10px; border-radius:8px; margin-top:10px; font-size:14px; }
+</style>
+</head>
+<body>
+
+<nav class="menu">
+  <a href="index.html" class="btn">Ana Sayfa</a>
+  <a href="oyunlar.html" class="btn">Oyunlar</a>
+  <a href="indirme.html" class="btn">Kodlar</a>
+  <a href="eglence.html" class="btn">Eğlence</a>
+  <a href="pc-yarisma.html" class="btn">PC Yarışması</a>
+</nav>
+
+<h1>🎮 Oyun Rehberi - Tüm Oyunlar</h1>
+<p>Oyunları keşfedin, sistem gereksinimlerini görün ve APK indirme linklerine ulaşın!</p>
+
+<div class="container">
+
+<!-- FPS Oyunları -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Valorant_cover_art.jpg" alt="Valorant">
+<h3>Valorant</h3>
+<p>FPS / Rekabetçi / Online</p>
+<video controls>
+<source src="https://www.youtube.com/watch?v=ws-J6yHOnx8" type="video/mp4">
+</video>
+<div class="system">
+<strong>Minimum:</strong> Intel Core 2 Duo E8400, 4GB RAM, Intel HD 3000<br>
+<strong>Önerilen:</strong> Intel i3-4150, 4GB RAM, GeForce GT 730
+</div>
+<button onclick="window.location.href='https://example.com/valorant.apk'">APK İndir</button>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/f/fc/Red_Dead_Redemption_2.jpg" alt="Red Dead Redemption 2">
+<h3>Red Dead Redemption 2</h3>
+<p>Açık Dünya / Hikaye / RPG</p>
+<video controls>
+<source src="https://www.youtube.com/watch?v=eaW0tYpxyp0" type="video/mp4">
+</video>
+<div class="system">
+<strong>Minimum:</strong> Intel Core i5-2500K, 8GB RAM, GeForce GTX 770<br>
+<strong>Önerilen:</strong> Intel Core i7-4770K, 12GB RAM, GeForce GTX 1060
+</div>
+<button onclick="window.location.href='https://example.com/rdr2.apk'">APK İndir</button>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Minecraft_cover.png" alt="Minecraft">
+<h3>Minecraft</h3>
+<p>Açık Dünya / Macera / Sandbox</p>
+<video controls>
+<source src="https://www.youtube.com/watch?v=MmB9b5njVbA" type="video/mp4">
+</video>
+<div class="system">
+<strong>Minimum:</strong> CPU: 2.0 GHz, RAM: 2GB, GPU: Intel HD Graphics<br>
+<strong>Önerilen:</strong> CPU: 2.6 GHz, RAM: 4GB, GPU: NVIDIA GeForce GTX 660
+</div>
+<button onclick="window.location.href='https://example.com/minecraft.apk'">APK İndir</button>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/2/23/Cyberpunk_2077_box_art.jpg" alt="Cyberpunk 2077">
+<h3>Cyberpunk 2077</h3>
+<p>RPG / Hikaye / Gelecek</p>
+<video controls>
+<source src="https://www.youtube.com/watch?v=FknHjl7eQ6o" type="video/mp4">
+</video>
+<div class="system">
+<strong>Minimum:</strong> Intel Core i5-3570K, 8GB RAM, GTX 780<br>
+<strong>Önerilen:</strong> Intel Core i7-4790, 12GB RAM, GTX 1060
+</div>
+<button onclick="window.location.href='https://example.com/cyberpunk.apk'">APK İndir</button>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/5/5f/Call_of_Duty_Modern_Warfare_cover_art.jpg" alt="Call of Duty Modern Warfare">
+<h3>Call of Duty: Modern Warfare</h3>
+<p>FPS / Hikaye / Multiplayer</p>
+<video controls>
+<source src="https://www.youtube.com/watch?v=5tkjK4-1R30" type="video/mp4">
+</video>
+<div class="system">
+<strong>Minimum:</strong> Intel Core i3-4340, 8GB RAM, GTX 670<br>
+<strong>Önerilen:</strong> Intel Core i5-2500K, 12GB RAM, GTX 970
+</div>
+<button onclick="window.location.href='https://example.com/cod.apk'">APK İndir</button>
+</div>
+
+<!-- Daha fazla oyun eklenebilir -->
+</div>
+
+</body>
+</html>
