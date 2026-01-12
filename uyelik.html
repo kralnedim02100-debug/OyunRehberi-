@@ -1,3 +1,18 @@
+<p id="welcome"></p>
+<button onclick="logout()">Çıkış</button>
+
+<script>
+if(localStorage.getItem("login")==="true"){
+  welcome.innerText="Hoş geldin, " + localStorage.getItem("user");
+}else{
+  window.location.href="uyelik.html";
+}
+
+function logout(){
+  localStorage.removeItem("login");
+  location.reload();
+}
+</script>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -35,6 +50,14 @@ button{
   background:#2563eb;
   color:white;
   font-weight:bold;
+  cursor:pointer;
+}
+
+#msg{
+  margin-top:10px;
+  text-align:center;
+  color:#22c55e;
+  font-weight:bold;
 }
 </style>
 </head>
@@ -54,39 +77,35 @@ button{
 </div>
 
 <script>
+const msg = document.getElementById("msg");
+
 function register(){
+  if(user.value === "" || pass.value === ""){
+    msg.style.color = "red";
+    msg.innerText = "❌ Tüm alanları doldurun!";
+    return;
+  }
   localStorage.setItem("user", user.value);
   localStorage.setItem("pass", pass.value);
-  msg.innerText="✅ Kayıt başarılı";
+  msg.style.color = "#22c55e";
+  msg.innerText="✅ Kayıt başarılı! Giriş yapabilirsiniz.";
 }
 
 function login(){
-  if(
-    user.value === localStorage.getItem("user") &&
-    pass.value === localStorage.getItem("pass")
-  ){
+  const savedUser = localStorage.getItem("user");
+  const savedPass = localStorage.getItem("pass");
+
+  if(user.value === savedUser && pass.value === savedPass){
     localStorage.setItem("login","true");
-    window.location.href="index.html";
-  }else{
-    msg.innerText="❌ Hatalı giriş";
+    msg.style.color = "#22c55e";
+    msg.innerText="✅ Giriş başarılı! Ana sayfaya yönlendiriliyorsunuz...";
+    setTimeout(()=>{ window.location.href="index.html"; }, 1000);
+  } else {
+    msg.style.color = "red";
+    msg.innerText="❌ Hatalı giriş!";
   }
 }
 </script>
 
 </body>
 </html>
-<p id="welcome"></p>
-<button onclick="logout()">Çıkış</button>
-
-<script>
-if(localStorage.getItem("login")==="true"){
-  welcome.innerText="Hoş geldin, " + localStorage.getItem("user");
-}else{
-  window.location.href="uyelik.html";
-}
-
-function logout(){
-  localStorage.removeItem("login");
-  location.reload();
-}
-</script>
